@@ -31,6 +31,14 @@ public class Login extends HttpServlet {
         // TODO Auto-generated constructor stub
     }
 
+    static {
+        try {
+            Class.forName("org.postgresql.Driver");
+        } catch (ClassNotFoundException e) {
+            throw new IllegalStateException("Failed to load JDBC driver for PostgreSQL", e);
+        }
+    }
+    
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
@@ -90,9 +98,9 @@ public class Login extends HttpServlet {
     
 
     private Connection getConnection() throws SQLException, URISyntaxException {
-    	String jdbcUrl = "jdbc:oracle:thin:@localhost:1521:orcl";
-        String user = "system";
-        String password = "system";
+    	 String jdbcUrl = "jdbc:postgresql://35.192.222.218:5432/r2schools";
+         String user = "postgres";
+         String password = "adminuser";
         
         return DriverManager.getConnection(jdbcUrl, user, password);
    }

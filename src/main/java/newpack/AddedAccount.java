@@ -20,6 +20,14 @@ import javax.servlet.http.HttpServletResponse;
 public class AddedAccount extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
+    static {
+        try {
+            Class.forName("org.postgresql.Driver");
+        } catch (ClassNotFoundException e) {
+            throw new IllegalStateException("Failed to load JDBC driver for PostgreSQL", e);
+        }
+    }
+    
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html");
@@ -91,10 +99,11 @@ public class AddedAccount extends HttpServlet {
     }
 
     private Connection getConnection() throws SQLException, URISyntaxException {
-        String jdbcUrl = "jdbc:oracle:thin:@localhost:1521:orcl";
-        String user = "system";
-        String password = "system";
-        
+    	
+         String jdbcUrl = "jdbc:postgresql://35.192.222.218:5432/r2schools";
+         String user = "postgres";
+         String password = "adminuser";
+ 
         return DriverManager.getConnection(jdbcUrl, user, password);
     }
 }
