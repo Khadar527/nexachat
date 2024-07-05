@@ -1,0 +1,57 @@
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+  
+    <servlet>
+        <servlet-name>ChatServlet</servlet-name>
+        <servlet-class>newpack.ChatServlet</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>ChatServlet</servlet-name>
+        <url-pattern>/chat</url-pattern>
+    </servlet-mapping>
+  
+    <filter>
+        <filter-name>CORSFilter</filter-name>
+        <filter-class>newpack.CORSFilter</filter-class>
+    </filter>
+    
+    <filter-mapping>
+        <filter-name>CORSFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    <servlet>
+    <description></description>
+    <display-name>AddedAccount</display-name>
+    <servlet-name>AddedAccount</servlet-name>
+    <servlet-class>newpack.AddedAccount</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddedAccount</servlet-name>
+    <url-pattern>/add_account</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Login</display-name>
+    <servlet-name>Login</servlet-name>
+    <servlet-class>newpack.Login</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Login</servlet-name>
+    <url-pattern>/Login</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <description></description>
+    <display-name>Homepage</display-name>
+    <servlet-name>Homepage</servlet-name>
+    <servlet-class>newpack.Homepage</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Homepage</servlet-name>
+    <url-pattern>/Homepage</url-pattern>
+  </servlet-mapping>
+  
+</web-app>

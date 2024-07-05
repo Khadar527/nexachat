@@ -1,0 +1,180 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+<title>Login Page</title>
+<style>
+
+body {font-family: Arial, Helvetica, sans-serif;background:inerhit;}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: none;
+  border-bottom: 1px solid dodgerblue;
+  box-sizing: border-box;
+  outline: none;
+  background: inherit;
+  color: black;
+  font-family: poppins;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  border-radius: 10px;
+}
+
+
+/* Set a style for all buttons */
+.cancelbtn{border-radius: 20px;font-family: calibri;}
+button {
+  background-color: #0CAFFF;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  font-family: poppins;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+  position: relative;
+}
+
+img.avatar {
+  width: 40%;
+  border-radius: 50%;
+  
+}
+
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+   /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+
+  top: 0;
+  width: 700px; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  border: none;
+  padding-top: 60px;
+}
+.modal::-webkit-scrollbar {display: none;}
+.modal{-ms-overflow-style: none;scrollbar-width: none;}
+/* Modal Content/Box */
+.modal-content {
+  background: inherit;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: none;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  padding: 20px;
+  border-radius: 20px;
+  position: relative;
+  top: -55px;
+  
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.close {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
+}
+@media screen and (min-width:1100px){.modal{position: relative;left: 25%;top: 0;}input[type=text], input[type=password]{width: 80%;}label{padding-left:30px;}}
+@media screen and (max-width:450px){label{padding-left: 0px;}input[type=text], input[type=password] {color: black;}.modal{width: 100%;background-color: white;box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;}.modal input{border: none;box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;font-family: poppins;border-bottom:1px dodgerblue solid;border-radius: 10px;}}
+.close:hover,
+.close:focus {
+  color: red;
+  cursor: pointer;
+}
+
+/* Add Zoom Animation */
+
+/* Change styles for span and cancel button on extra small screens */
+
+</style>
+</head>
+<body>
+
+
+<div id="id01" class="modal">
+  
+  <form class="modal-content animate" action="Login" method="POST">
+    <div class="imgcontainer">
+      
+      <img src="https://img.freepik.com/free-vector/user-verification-unauthorized-access-prevention-private-account-authentication-cyber-security-people-entering-login-password-safety-measures_335657-3530.jpg?size=338&ext=jpg&ga=GA1.1.1413502914.1719792000&semt=ais_user" alt="Avatar" class="avatar">
+    </div>
+
+    <div class="container">
+      <label for="uname">Username</label><br>
+     <center> <input type="text" placeholder="Enter username" id='maild' name="username" autocomplete="off" required><br></center>
+
+      <label for="psw">Email Address</label><br>
+      <center><input type="text" placeholder="Enter mail adress" id="mailid" name="mail" autocomplete="off" required><br>
+        </center>
+      <button type="submit" onclick="login()">Login</button>
+      <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+      </label>
+    </div>
+
+    <div class="container" style="background-color:none">
+      <button type="button" onclick="homepageelems()" class="cancelbtn">Cancel</button>
+      <span class="psw"> <a href="Registration.html">Create an Account</a></span>
+    </div>
+  </form>
+  
+</div>
+
+<script>
+// Get the modal
+
+function login(){
+	var user = document.getElementById('maild').value;
+	localStorage.setItem("name",user);
+	var username = document.getElementById('maild').innerHTML;
+	alert(user+"user");
+	alert(username+"username");
+}
+function homepageelems(){
+	window.history.back();
+}
+</script>
+
+</body>
+</html>
