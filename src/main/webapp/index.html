@@ -186,6 +186,7 @@
     <script>
        // var does;
        var user = localStorage.getItem("name");
+       
         function sendCompany(company){
             //alert(company);
             var sendButton = `<button type="submit" class="btn btn-success" onclick="sendMessage('${company}')" id="send-button">Send</button>`;
@@ -195,11 +196,22 @@
             //does = company;
            // alert(does);
            fetchMessages(company);
+           
         }
 
         var elem = document.getElementById('companynames').innerHTML;
         function sendMessage(receiver) {
-			    const inputMessage = document.getElementById('inputMessage').value;
+			if(user==null || user==''){
+				alert("Please do login");
+				var text;
+				if (confirm("Page is redirecting to Login page")) {
+				   window.location.href = "Login.html"
+				} else {
+				    text = "You pressed Cancel!";
+				  }
+				  
+			}
+			   else{ const inputMessage = document.getElementById('inputMessage').value;
 			    fetch('http://localhost:8098/NewChatProcess/chat', {
 			        method: 'POST',
 			        headers: {
@@ -213,6 +225,7 @@
 			        document.getElementById('inputMessage').value = '';
 			    })
 			    .catch(error => console.error('Error:', error));
+			 }
 		}
 
 	        function fetchMessages(company) {
