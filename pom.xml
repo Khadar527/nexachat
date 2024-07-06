@@ -5,7 +5,7 @@
     <groupId>NewChatProcess</groupId>
     <artifactId>NewChatProcess</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <packaging>jar</packaging>
+    <packaging>war</packaging>
     <name>A chat</name>
     <description>A Chat</description>
 
@@ -20,7 +20,7 @@
                 </configuration>
             </plugin>
             <plugin>
-                <artifactId>maven-jar-plugin</artifactId>
+                <artifactId>maven-war-plugin</artifactId>
                 <version>3.2.0</version>
                 <configuration>
                     <archive>
@@ -42,9 +42,9 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.postgresql</groupId>
-            <artifactId>postgresql</artifactId>
-            <version>42.2.18</version>
+            <groupId>com.microsoft.sqlserver</groupId>
+            <artifactId>mssql-jdbc</artifactId>
+            <version>9.2.1.jre8</version>
         </dependency>
         <dependency>
             <groupId>javax.servlet</groupId>

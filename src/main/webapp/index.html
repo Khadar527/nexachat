@@ -212,7 +212,7 @@
 				  
 			}
 			   else{ const inputMessage = document.getElementById('inputMessage').value;
-			    fetch('http://localhost:8098/NewChatProcess/chat', {
+			  fetch('https://nexachat.azurewebsites.net/NewChatProcess/chat', {
 			        method: 'POST',
 			        headers: {
 			            'Content-Type': 'application/json'
@@ -229,7 +229,7 @@
 		}
 
 	        function fetchMessages(company) {
-		    fetch(`http://localhost:8098/NewChatProcess/chat?sender=${user}&receiver=${company}`)
+		    fetch(`https://nexachat.azurewebsites.net/NewChatProcess/chat?sender=${user}&receiver=${company}`)
 		        .then(response => response.text())
 		        .then(data => {
 		            updateChatHistory(data);

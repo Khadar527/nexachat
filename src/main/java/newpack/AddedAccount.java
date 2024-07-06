@@ -22,12 +22,12 @@ public class AddedAccount extends HttpServlet {
 
     static {
         try {
-            Class.forName("org.postgresql.Driver");
+            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
         } catch (ClassNotFoundException e) {
-            throw new IllegalStateException("Failed to load JDBC driver for PostgreSQL", e);
+            throw new IllegalStateException("Failed to load JDBC driver for SQL Server", e);
         }
     }
-    
+  
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html");
@@ -100,10 +100,10 @@ public class AddedAccount extends HttpServlet {
 
     private Connection getConnection() throws SQLException, URISyntaxException {
     	
-         String jdbcUrl = "jdbc:postgresql://35.192.222.218:5432/r2schools";
-         String user = "postgres";
-         String password = "adminuser";
- 
+    	String jdbcUrl = "jdbc:sqlserver://mychatdata.database.windows.net:1433;database=r2schoolss;user=system@mychatdata;password=tiger@23;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30";
+        String user = "system";
+        String password = "tiger@23";
+       
         return DriverManager.getConnection(jdbcUrl, user, password);
     }
 }

@@ -15,15 +15,15 @@ import javax.servlet.http.HttpServletResponse;
 
 public class ChatServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
-    private static final String JDBC_URL = "jdbc:postgresql://35.192.222.218:5432/r2schools";
-    private static final String DB_USER = "postgres";
-    private static final String DB_PASSWORD = "adminuser";
+    private static final String JDBC_URL = "jdbc:sqlserver://datachat1.database.windows.net:1433;database=w2schools;user=system@datachat1;password=tiger@23;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;";
+    private static final String DB_USER = "system";
+    private static final String DB_PASSWORD = "tiger@23";
 
     static {
         try {
-            Class.forName("org.postgresql.Driver");
+            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
         } catch (ClassNotFoundException e) {
-            throw new IllegalStateException("Failed to load JDBC driver for PostgreSQL", e);
+            throw new IllegalStateException("Failed to load JDBC driver for SQL Server", e);
         }
     }
 
