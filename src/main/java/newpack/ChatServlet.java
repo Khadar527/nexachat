@@ -15,14 +15,27 @@ import javax.servlet.http.HttpServletResponse;
 
 public class ChatServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
-    private static final String JDBC_URL = "jdbc:sqlserver://datachat1.database.windows.net:1433;database=w2schools;user=system@datachat1;password=tiger@23;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;";
+    private static final String JDBC_URL = "jdbc:sqlserver://mychatdata.database.windows.net:1433;database=r2schoolss;user=system@mychatdata;password=tiger@23;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;";
+    //private static final String JDBC_URL = "jdbc:oracle:thin:@localhost:1521:orcl";
     private static final String DB_USER = "system";
     private static final String DB_PASSWORD = "tiger@23";
 
+    /*static {
+        try {
+            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+        	//Class.forName("oracle.jdbc.driver.OracleDriver");
+        } catch (ClassNotFoundException e) {
+            throw new IllegalStateException("Failed to load JDBC driver for SQL Server", e);
+        }
+    }*/
+    
     static {
         try {
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+            System.out.println("JDBC driver loaded successfully.");
         } catch (ClassNotFoundException e) {
+            System.err.println("Failed to load JDBC driver: " + e.getMessage());
+            e.printStackTrace();
             throw new IllegalStateException("Failed to load JDBC driver for SQL Server", e);
         }
     }

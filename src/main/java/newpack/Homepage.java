@@ -2,7 +2,6 @@ package newpack;
 
 import java.io.IOException;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -32,8 +31,7 @@ public class Homepage extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		RequestDispatcher rd=request.getRequestDispatcher("index.html");
-		rd.forward(request, response);
+		response.sendRedirect("index.html");
 	}
 
 }

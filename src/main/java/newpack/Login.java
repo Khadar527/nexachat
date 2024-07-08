@@ -31,14 +31,26 @@ public class Login extends HttpServlet {
         // TODO Auto-generated constructor stub
     }
 
-    static {
+  /*  static {
         try {
-            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+            //Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+        	Class.forName("oracle.jdbc.driver.OracleDriver");
         } catch (ClassNotFoundException e) {
             throw new IllegalStateException("Failed to load JDBC driver for SQL Server", e);
         }
     }
-
+*/
+    static {
+        try {
+            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+            System.out.println("JDBC driver loaded successfully.");
+        } catch (ClassNotFoundException e) {
+            System.err.println("Failed to load JDBC driver: " + e.getMessage());
+            e.printStackTrace();
+            throw new IllegalStateException("Failed to load JDBC driver for SQL Server", e);
+        }
+    }
+    
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
@@ -99,6 +111,7 @@ public class Login extends HttpServlet {
 
     private Connection getConnection() throws SQLException, URISyntaxException {
     	 String jdbcUrl = "jdbc:sqlserver://mychatdata.database.windows.net:1433;database=r2schoolss;user=system@mychatdata;password=tiger@23;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30";
+    	 //String jdbcUrl = "jdbc:oracle:thin:@localhost:1521:orcl"; 
          String user = "system";
          String password = "tiger@23";
         

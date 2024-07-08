@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nexachat</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
  	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -121,6 +122,22 @@
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
+#myInput {
+  
+    
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 5px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+span{
+    
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
  @media only screen and (max-width: 450px) {
       .sidebar {
         width: 45px;
@@ -132,15 +149,163 @@
         color: white;
       }
     }
+    .dropbtn{
+		border: none;
+		background-color: white;
+	}
+     .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 160px;
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+            z-index: 1;
+           
+        }
+        .dropdown-content button {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            width: 100%;
+            text-align: center;
+            border: none;
+            background: none;
+            cursor: pointer;
+        }
+        .dropdown-content button:hover {
+            background-color: #f1f1f1;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .modal {
+            display: none; 
+            position: fixed; 
+            z-index: 1; 
+            padding-top: 100px; 
+            left: 0;
+            top: 0;
+            width: 100%; 
+            height: 100%; 
+            overflow: auto; 
+            background-color: rgb(0,0,0); 
+            background-color: rgba(0,0,0,0.4); 
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            border-radius: 10px;
+        }
+        .close {
+            color: #aaaaaa;
+            float: right;
+            font-size: 28px;
+        }
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        #logoutbtn {
+            font-size: 16px;
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+            border-radius: 10px;
+            padding: 10px;
+            background-color: dodgerblue;
+            color: white;
+            border: none;
+            width: auto;
+        }
+        #closebtnlogout {
+            font-size: 16px;
+            border-radius: 10px;
+            padding: 10px;
+            background-color: white;
+            color: dodgerblue;
+            text-decoration: underline;
+            border: none;
+            width: auto;
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        }
+	.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
 
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  font-size: 28px;
+  cursor: pointer;
+  
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+  
+}
+#myInput{
+	outline: none;
+    width: 60%;
+    height: 50px;
+    border-radius: 20px;
+	font-size: 16px;
+    background-image: url('/css/searchicon.png');
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
     </style>
 </head>
 <body>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   
     <div class="container">
+		
     <div class="sidebar">
-        <ul id="chat-list">
+		 <div class="dropdown" style="float:right;">
+                <button class="dropbtn"><i class="fas fa-ellipsis-vertical"></i></button>
+                <div class="dropdown-content">
+                    <button onclick="window.location.href='Profile.html'">Profile</button>
+                    <button id="myBtn_search_companies">Search</button>
+                    <button id="myBtn">Logout</button>
+                </div>
+            </div>
+	<br><br>
+	    <ul id="chat-list">
             <li onclick="sendCompany('Google')" data-company="Google"><img src="https://tse2.mm.bing.net/th?id=OIP.D6P-BO32wCApcPIIjt6p5wAAAA&pid=Api&P=0&h=180" alt="Google"> Google</li>
             <li onclick="sendCompany('Amazon')" data-company="Amazon"><img src="https://i.pinimg.com/originals/01/ca/da/01cada77a0a7d326d85b7969fe26a728.jpg" alt="Amazon"> Amazon</li>
             <li onclick="sendCompany('Microsoft')" data-company="Microsoft"><img src="https://tse2.mm.bing.net/th?id=OIP.PWoq1WvDQDxc_MPv4Jt0GwHaHa&pid=Api&P=0&h=180" alt="Microsoft"> Microsoft</li>
@@ -152,7 +317,8 @@
             <li onclick="sendCompany('Redington')" data-company="Redington"><img src="https://companieslogo.com/img/orig/REDINGTON.NS-6aa74494.png?t=1604053079" alt="Redington"> Redington</li>
             <li onclick="sendCompany('Tech Mahindra')" data-company="Tech Mahindra"><img src="https://download.logo.wine/logo/Tech_Mahindra/Tech_Mahindra-Logo.wine.png" alt="Tech Mahindra"> Tech Mahindra</li>
         </ul>
-        <button type="button" class="btn btn-primary" style="box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;float: right;">+</button>
+        <button type="button" class="btn btn-primary" id="openModalBtn" style="box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;float: right;">+</button>
+         
 
     </div>
     
@@ -183,13 +349,30 @@
     <input type="text" id="inputMessage" placeholder="Enter a message">
     <button onclick="sendMessage('Google')">Send</button>-
     <div id="chatsend"></div>-->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Are you sure you want to logout?</p><br>
+            <p><button id="closebtnlogout">Close</button>
+            <button id="logoutbtn" style="float: right;">Logout</button></p>
+        </div>
+    </div>
+    <div id="myModal_search_companies" class="modal">
+
+  <!-- Modal content -->
+ <span class="close_search_companies" style="position: relative;color: black;">&times;</span>
+ <center><input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name" autocomplete="off">   </center>
+
+	
+
+</div>
     <script>
        // var does;
        var user = localStorage.getItem("name");
        
         function sendCompany(company){
             //alert(company);
-            var sendButton = `<button type="submit" class="btn btn-success" onclick="sendMessage('${company}')" id="send-button">Send</button>`;
+            var sendButton = `<button type="submit" class="btn btn-success" onclick="sendMessage('${company}')" id="send-button"><i class="fa-brands fa-telegram" style="font-size: 30px;"></i></button>`;
             document.getElementById('chatsend').innerHTML = sendButton;
             document.getElementById('companynames').innerHTML = company;
             document.getElementById('chat-company-name').innerHTML = company;
@@ -212,6 +395,7 @@
 				  
 			}
 			   else{ const inputMessage = document.getElementById('inputMessage').value;
+			   console.log(inputMessage+" "+user+" "+receiver)
 			  fetch('https://nexachat.azurewebsites.net/NewChatProcess/chat', {
 			        method: 'POST',
 			        headers: {
@@ -221,6 +405,7 @@
 			    })
 			    .then(response => response.text())
 			    .then(data => {
+					
 			        fetchMessages(receiver); // Fetch messages after sending
 			        document.getElementById('inputMessage').value = '';
 			    })
@@ -245,7 +430,7 @@
                 const messageElement = document.createElement('div');
                 messageElement.classList.add('message');
                 if (message.startsWith(user)) {
-                    messageElement.classList.add('client-message');
+					messageElement.classList.add('client-message');
                 } else {
                     messageElement.classList.add('server-message');
                 }
@@ -253,7 +438,100 @@
                 chatWindow.appendChild(messageElement);
             });
         }
+        
+         function myFunction() {
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("chat-list");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("img")[0];
+        txtValue = a.alt;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+        var modal = document.getElementById("myModal");
+        var btn = document.getElementById("myBtn");
+        var span = document.getElementsByClassName("close")[0];
 
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        document.getElementById("closebtnlogout").onclick = function() {
+            modal.style.display = "none";
+        }
+
+        document.getElementById("logoutbtn").onclick = function() {
+            window.location.href = 'Login.html'; // Change this to your logout URL or logic
+        }
+		
+		var modalSearchCompany = document.getElementById("myModal_search_companies");
+
+// Get the button that opens the modal
+var btnSearchCompany = document.getElementById("myBtn_search_companies");
+
+// Get the <span> element that closes the modal
+var spanSearchCompany = document.getElementsByClassName("close_search_companies")[0];
+
+// When the user clicks the button, open the modal 
+btnSearchCompany.onclick = function() {
+  modalSearchCompany.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+spanSearchCompany.onclick = function() {
+  modalSearchCompany.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modalSearchCompany.style.display = "none";
+  }
+}
+
+document.getElementById('openModalBtn').onclick = function() {
+            document.getElementById('companyModal').style.display = 'block';
+        }
+        
+        function closeModal() {
+            document.getElementById('companyModal').style.display = 'none';
+        }
+        
+        function addSelectedCompanies() {
+            const selectedCompanies = document.querySelectorAll('#companyList input[type="checkbox"]:checked');
+            const chatList = document.getElementById('chat-list');
+            
+            selectedCompanies.forEach(company => {
+                const companyName = company.getAttribute('data-company');
+                const companyImg = company.getAttribute('data-img');
+                
+                const li = document.createElement('li');
+                li.setAttribute('onclick', `sendCompany('${companyName}')`);
+                li.setAttribute('data-company', companyName);
+                li.innerHTML = `<img src="${companyImg}" alt="${companyName}"> ${companyName}`;
+                
+                chatList.appendChild(li);
+            });
+            
+            closeModal();
+        }
         // Replace 'yourCompany' with the actual company name or identifier
         //const company = 'yourCompany';
         //alert(does);
